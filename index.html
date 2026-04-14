@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>阮慶兒 Julia | 個人專業雲端職涯檔案</title>
+    <title>阮慶兒 Julia | 靜宜資管專業個人雲端檔案</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <style>
@@ -18,108 +18,116 @@
         body { 
             background-color: var(--bg-soft); 
             font-family: "Microsoft JhengHei", "PingFang TC", sans-serif; 
-            color: #444;
-            line-height: 1.8;
+            color: #333;
+            line-height: 1.9;
             scroll-behavior: smooth;
         }
 
-        /* 導覽列 */
+        /* Navigation */
         .navbar { 
-            background: rgba(173, 20, 87, 0.9) !important; 
+            background: rgba(173, 20, 87, 0.95) !important; 
             backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1.2rem 0;
         }
 
-        /* 主視覺區 */
+        /* Hero Section */
         .hero-section { 
             background: linear-gradient(135deg, var(--dark-pink) 0%, var(--primary-pink) 100%); 
             color: white; 
-            padding: 160px 0 100px; 
-            clip-path: ellipse(150% 100% at 50% 0%);
+            padding: 180px 0 120px; 
+            clip-path: ellipse(160% 100% at 50% 0%);
         }
 
         .hero-img {
-            width: 320px;
-            height: 320px;
+            width: 350px;
+            height: 350px;
             object-fit: cover;
-            border-radius: 40px;
-            border: 10px solid rgba(255,255,255,0.2);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            transform: rotate(-2deg);
+            border-radius: 50px;
+            border: 12px solid rgba(255,255,255,0.2);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            transform: rotate(-3deg);
             transition: 0.5s;
         }
         .hero-img:hover { transform: rotate(0deg) scale(1.05); }
 
-        /* 標題樣式 */
+        /* Section Title */
         .section-title { 
             color: var(--dark-pink); 
             font-weight: 800; 
-            margin-bottom: 50px; 
+            font-size: 2.5rem;
+            margin-bottom: 60px; 
+            text-align: center;
             position: relative;
-            display: inline-block;
         }
         .section-title::after {
             content: "";
-            width: 60%;
-            height: 5px;
+            width: 80px;
+            height: 6px;
             background: var(--accent-pink);
             position: absolute;
-            bottom: -10px;
-            left: 0;
-            border-radius: 5px;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 10px;
         }
 
-        /* 卡片與內容 */
+        /* Card Customization */
         .card { 
             border: none; 
-            border-radius: 30px; 
-            box-shadow: 0 15px 35px rgba(173, 20, 87, 0.08); 
-            transition: 0.3s;
+            border-radius: 35px; 
+            box-shadow: 0 20px 40px rgba(173, 20, 87, 0.08); 
             background: white;
+            margin-bottom: 40px;
+            padding: 40px;
+        }
+
+        .highlight-box {
+            background: var(--light-pink);
+            border-left: 8px solid var(--primary-pink);
+            padding: 30px;
+            border-radius: 20px;
             margin-bottom: 30px;
         }
-        .card:hover { transform: translateY(-10px); }
 
-        .icon-box {
-            width: 60px;
-            height: 60px;
-            background: var(--light-pink);
-            color: var(--primary-pink);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+        .skill-badge {
+            background: var(--primary-pink);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            display: inline-block;
+            margin: 8px;
+            font-weight: bold;
         }
 
-        .highlight-text { color: var(--primary-pink); font-weight: bold; }
-
-        /* 職涯規劃時間軸 */
+        /* Timeline */
         .timeline-item {
-            border-left: 3px solid var(--accent-pink);
-            padding-left: 30px;
-            padding-bottom: 40px;
+            border-left: 4px solid var(--accent-pink);
+            padding-left: 40px;
+            padding-bottom: 50px;
             position: relative;
         }
         .timeline-item::before {
             content: "";
             position: absolute;
-            left: -11px;
+            left: -14px;
             top: 0;
-            width: 20px;
-            height: 20px;
+            width: 24px;
+            height: 24px;
             background: white;
-            border: 4px solid var(--primary-pink);
+            border: 5px solid var(--primary-pink);
             border-radius: 50%;
         }
 
-        footer { background: var(--dark-pink); color: white; padding: 60px 0; }
+        footer { 
+            background: var(--dark-pink); 
+            color: white; 
+            padding: 80px 0 40px;
+        }
 
-        /* 響應式調整 */
-        @media (max-width: 768px) {
-            .hero-section { padding: 100px 0 60px; }
-            .hero-img { width: 240px; height: 240px; }
+        .vietnam-flag {
+            width: 30px;
+            vertical-align: middle;
+            margin-right: 10px;
         }
     </style>
 </head>
@@ -127,67 +135,160 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">Julia 阮慶兒</a>
+            <a class="navbar-brand fw-bold fs-3" href="#">Julia 阮慶兒</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto text-center">
-                    <li class="nav-item"><a class="nav-link" href="#about">職涯分析</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#job">工作目標</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#resume">個人自傳</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#plan">未來規劃</a></li>
+                <ul class="navbar-nav ms-auto text-center fs-5">
+                    <li class="nav-item"><a class="nav-link" href="#about">個人特質</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">成長歷程</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#resume">專業自傳</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#plan">未來藍圖</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header class="hero-section">
+    <header class="hero-section text-center text-md-start">
         <div class="container">
-            <div class="row align-items-center text-center text-md-start">
+            <div class="row align-items-center">
                 <div class="col-md-7">
-                    <span class="badge bg-light text-dark mb-3 px-3 py-2 rounded-pill shadow-sm">靜宜大學 資訊管理學系</span>
-                    <h1 class="display-2 fw-bold mb-3">阮慶兒 Julia</h1>
-                    <p class="fs-4 mb-4 opacity-90">技術與文化的橋樑：資管專業 x 多語優勢 x 文學素養</p>
+                    <h5 class="text-uppercase tracking-widest mb-3" style="letter-spacing: 3px;">Welcome to My Portfolio</h5>
+                    <h1 class="display-1 fw-bold mb-3">阮慶兒 Julia</h1>
+                    <h2 class="h3 mb-4 opacity-90">跨越邊界的夢想家：從越南到台灣的資管之路</h2>
+                    <p class="fs-5 mb-5 lh-lg">
+                        熱愛文字的文學靈魂，轉化為邏輯嚴謹的資管專業。<br>
+                        致力於用技術連接世界，在福爾摩沙打造屬於我的職涯舞台。
+                    </p>
                     <div class="d-flex justify-content-center justify-content-md-start gap-3">
-                        <a href="#resume" class="btn btn-light btn-lg rounded-pill px-4 text-primary fw-bold">查看履歷</a>
-                        <a href="#about" class="btn btn-outline-light btn-lg rounded-pill px-4">特質分析</a>
+                        <a href="#resume" class="btn btn-light btn-lg rounded-pill px-5 py-3 text-primary fw-bold shadow">探索我的故事</a>
                     </div>
                 </div>
                 <div class="col-md-5 text-center mt-5 mt-md-0">
-                    <img src="meee.jpeg" alt="Julia Beach" class="hero-img">
+                    <img src="meee.jpeg" alt="Julia Nhi" class="hero-img">
                 </div>
             </div>
         </div>
     </header>
 
-    <div class="container my-5 pt-5">
+    <div class="container">
         
-        <section id="about" class="mb-5">
-            <h2 class="section-title">職涯測驗深度分析</h2>
-            <div class="card p-4 p-md-5">
-                <div class="row g-4">
-                    <div class="col-md-6">
-                        <h4 class="fw-bold text-primary mb-4">Holland 興趣何倫碼：SAC 型</h4>
-                        <div class="mb-3">
-                            <h6 class="fw-bold"><i class="bi bi-people-fill me-2"></i>S 社會型 (Social)</h6>
-                            <p>我熱衷於與人溝通，能感同身受使用者的需求。在 MIS 系統規劃中，這有助於我精準轉譯業務需求與技術架構。</p>
+        <section id="about" class="my-5 pt-5">
+            <h2 class="section-title">職涯核心特質分析</h2>
+            <div class="card">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="highlight-box">
+                            <h4 class="fw-bold text-primary mb-3">Holland 興趣碼：SAC 型</h4>
+                            <p>根據 104 人力銀行與 UCAN 測驗結果，我展現了鮮明的<strong>社會型(S)、藝術型(A)與常規型(C)</strong>結合。這代表我不僅具備服務熱忱，更擁有獨到的審美觀與嚴謹的執行力。</p>
                         </div>
-                        <div class="mb-3">
-                            <h6 class="fw-bold"><i class="bi bi-palette-fill me-2"></i>A 藝術型 (Artistic)</h6>
-                            <p>獲得全省文學獎的經驗培養了我的創造力。我對介面美感有極高追求，致力於開發兼具功能與美感的系統介面。</p>
+                        <div class="mb-4">
+                            <h6 class="fw-bold">【S】社會型：跨文化溝通的橋樑</h6>
+                            <p class="text-muted">身為在台越南留學生，我天生具備高適應力。我享受與人互動，能精準理解客戶需求並提供暖心的技術支援。</p>
                         </div>
-                        <div class="mb-3">
-                            <h6 class="fw-bold"><i class="bi bi-check-circle-fill me-2"></i>C 常規型 (Conventional)</h6>
-                            <p>面對數據庫與程式代碼時，我保持極致的嚴謹。對我而言，系統的穩定與精確是不可妥協的底線。</p>
+                        <div class="mb-4">
+                            <h6 class="fw-bold">【A】藝術型：感性與創意的火花</h6>
+                            <p class="text-muted">高中時期榮獲全省文學競賽二等獎，我熱愛創作故事。這讓我能以設計思維優化系統 UI，讓硬冷的代碼充滿溫度。</p>
+                        </div>
+                        <div>
+                            <h6 class="fw-bold">【C】常規型：系統運作的守護者</h6>
+                            <p class="text-muted">資管專業訓練使我重視邏輯與細節。在數據處理與 Firebase 管理上，我追求零失誤的卓越表現。</p>
                         </div>
                     </div>
-                    <div class="col-md-6 text-center">
-                        <div class="p-4 rounded-4" style="background: var(--light-pink);">
-                            <h5 class="fw-bold">UCAN 職能量化分析</h5>
-                            <ul class="list-unstyled mt-3 text-start">
-                                <li class="mb-3">溝通表達力：★★★★★</li>
-                                <li class="mb-3">邏輯分析力：★★★★☆
+                    <div class="col-lg-6">
+                        <div class="text-center p-4 border rounded-5 shadow-sm" style="background: white;">
+                            <img src="my-photo.jpg" alt="Julia Profile" class="img-fluid rounded-5 mb-4 shadow-sm" style="max-height: 400px;">
+                            <h5 class="fw-bold">專業能力分佈</h5>
+                            <div class="mt-3">
+                                <span class="skill-badge">越語母語級</span>
+                                <span class="skill-badge">中文流利</span>
+                                <span class="skill-badge">Python開發</span>
+                                <span class="skill-badge">UI/UX設計</span>
+                                <span class="skill-badge">跨國團隊協作</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="mb-5">
+            <h2 class="section-title">我的成長歷程與實習經驗</h2>
+            <div class="card p-5">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <h4 class="fw-bold text-primary mb-4"><i class="bi bi-mortarboard-fill me-2"></i>學業與才藝背景</h4>
+                        <p>我來自美麗的越南，現正於台灣靜宜大學深耕資訊管理專業。我的成長道路上一直伴隨著對「美」與「邏輯」的追求：</p>
+                        <ul class="lh-lg">
+                            <li><strong>文學榮耀：</strong> 高中時期，我熱衷於閱讀與寫作，曾代表學校參加<strong>全省文學競賽並榮獲二等獎(全省第二名)</strong>。這不僅是榮譽，更磨練了我細膩的觀察力與邏輯架構力。</li>
+                            <li><strong>校園活動：</strong> 高中期間積極參與多個<strong>文藝社團</strong>，負責活動企劃與表演，這奠定了我團隊合作與領導能力的基礎。</li>
+                            <li><strong>跨國求學：</strong> 帶著對科技的憧憬來到台灣，不僅克服語言障礙，更在資管領域展現出色的實踐能力。</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h4 class="fw-bold text-primary mb-4"><i class="bi bi-briefcase-fill me-2"></i>實務經驗與工讀</h4>
+                        <p>在台灣生活的日子裡，我積極投入各項實務練習，提升競爭力：</p>
+                        <ul class="lh-lg">
+                            <li><strong>資訊技術實作：</strong> 獨立開發 Flask 與 Firebase 串接系統，優化數據管理效率，展現技術即戰力。</li>
+                            <li><strong>校內資訊助理：</strong> 負責硬體設備維運與軟體問題排除，強化了面對突發狀況的解決力。</li>
+                            <li><strong>服務業多元磨練：</strong> 透過在台工讀經歷，我不僅提升了中文聽說能力，更學會了如何在快節奏環境下精準完成交辦任務。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="resume" class="mb-5">
+            <h2 class="section-title">個人職涯自傳</h2>
+            <div class="card p-5 shadow-lg">
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <h4 class="fw-bold text-primary mb-4 border-bottom pb-2">【文字與代碼的交響曲：我的自述】</h4>
+                        <div class="fs-5 lh-lg" style="text-align: justify;">
+                            <p>大家好，我是阮慶兒，目前就讀於靜宜大學資訊管理學系。很多人好奇，為什麼一個熱愛文學、曾獲得全省文學競賽二等獎的女孩，會選擇投身於資訊科技領域？對我而言，編寫程式碼就像是在寫一段有邏輯、有靈魂的故事。文學教會我如何觀察使用者的細微情緒，而資管教會我如何用技術去解決他們的需求。</p>
+                            
+                            <p>身為一名熱愛台灣生活的越南學生，我非常享受這裡的自由、便利與充滿可能的未來。我天生具備多語優勢，流利的越南語、中文與英語讓我能成為跨國企業中最需要的對接人才。我熱衷於寫作，閒暇時喜歡撰寫故事，這不僅是我的興趣，更是我梳理思緒、保持創意熱情的管道。我發現，這種創造力能讓我開發出的系統介面更具親和力與美感。</p>
+                            
+                            <p>在未來的職業生涯中，我的目標是成為一名卓越的<strong>跨國企業 MIS 系統分析助理</strong>。我特別嚮往能進入如華碩 (ASUS) 或研華 (Advantech) 等在越南有深厚發展的台商企業。我深知台商在東南亞布局的挑戰，我希望能利用我的資管專業，協助企業達成數位轉型，並利用我的語言天賦，消彌文化隔閡。我具備極高的抗壓性、責任感以及不斷進取的學習心，我渴望能在台灣這塊土地上紮根，實現我定居與發展的願景。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="plan" class="mb-5">
+            <h2 class="section-title">未來充實規劃 (兩年期)</h2>
+            <div class="card p-5">
+                <div class="timeline-item">
+                    <h5 class="fw-bold text-primary">2026-2027：專業深化與證照取得</h5>
+                    <p>計畫修習《大數據分析》與《企業資源規劃 ERP》。目標於大三上學期考取 **AWS Certified Cloud Practitioner** 證照，並積極尋找知名台商科技公司的暑期實習機會。</p>
+                </div>
+                <div class="timeline-item">
+                    <h5 class="fw-bold text-primary">2027-2028：跨領域整合與畢業接軌</h5>
+                    <p>完成以「跨國供應鏈管理」為題的畢業製作。同時通過 **TOCFL 華語文測驗高等級** 認證。積極參加校園徵才，目標在畢業前取得台灣企業的預聘書，正式開啟在台定居的生活規劃。</p>
+                </div>
+                <div class="timeline-item">
+                    <h5 class="fw-bold text-primary">長期目標：在台深耕發展</h5>
+                    <p>成為專業的 MIS 管理顧問，協助台灣企業在東南亞市場進行精準的數位化布局。在台灣建立屬於自己的生活圈，將這裡視為我的第二個家。</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
 
     <footer class="text-center">
         <div class="container">
+            <h3 class="fw-bold mb-4">期待與您進一步聯繫 Contact Me</h3>
+            <div class="d-flex justify-content-center gap-4 flex-wrap mb-4 fs-5">
+                <span><i class="bi bi-envelope-paper-heart-fill me-2"></i> knhi28012005@gmail.com</span>
+                <span><i class="bi bi-geo-alt-fill me-2"></i> 台灣台中市 | 靜宜大學 | 阮慶兒 Julia</span>
+            </div>
+            <hr class="bg-light opacity-25 w-50 mx-auto my-5">
+            <p class="small opacity-50">© 2026 Julia Nhi 阮慶兒 | 來自越南的資管夢想家 | 部署於 Vercel</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
